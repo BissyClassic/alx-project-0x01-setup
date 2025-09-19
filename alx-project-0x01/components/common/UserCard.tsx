@@ -1,10 +1,13 @@
-const UserCard: React.FC<UserProps> = () => {
-  return (
-    <main className="flex flex-col h-screen justify-center items-center text-4xl font-semibold">
-      <h2>Click me</h2>
-      <button className=" border px-3 py-1 text-lg mt-3  bg-blue-500 text-white rounded-full">Get Started</button>
-    </main>
-  )
-}
+import React from "react";
+import {UserProps} from "@/interfaces/index";
 
-export default UserCard;
+export default function UserCard({name, phone, company, email}: UserProps) {
+    return(
+        <div className="border p-4 rounded-md shadow">
+      <h2 className="font-bold text-lg">{name}</h2>
+      <p>Email: {email}</p>
+      <p>Phone: {phone}</p>
+      <p>Company: {company.name}</p>
+    </div>
+    )
+}
